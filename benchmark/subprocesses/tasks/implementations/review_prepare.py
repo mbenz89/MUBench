@@ -429,6 +429,9 @@ def _specialize_finding(finding, detector: Detector, base_path: str):
         __replace_dot_graph_with_image(finding, "pattern", base_path)
     elif detector.id == "mudetect":
         __replace_dot_graph_with_image(finding, "pattern_violation", base_path)
+    elif detector.id == "muminer":
+        __replace_dot_graph_with_image(finding, "pattern", base_path)
+        __replace_dot_graph_with_image(finding, "violation", base_path)
     return finding
 
 
@@ -441,6 +444,8 @@ def _sort_findings(detector: Detector, findings: List[Dict[str, str]]):
         sort_by = "rareness"
     elif detector.id == "mudetect":
         sort_by = "confidence"
+    elif detector.id == "muminer":
+        sort_by = "score"
     else:
         sort_by = None
 
