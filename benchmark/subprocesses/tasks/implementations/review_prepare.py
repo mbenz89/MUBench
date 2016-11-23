@@ -429,6 +429,7 @@ def _specialize_finding(finding, detector: Detector, base_path: str):
         __replace_dot_graph_with_image(finding, "pattern", base_path)
     elif detector.id == "mudetect":
         __replace_dot_graph_with_image(finding, "pattern_violation", base_path)
+        __replace_dot_graph_with_image(finding, "target_environment_mapping", base_path)
     elif detector.id == "muminer":
         __replace_dot_graph_with_image(finding, "pattern", base_path)
         __replace_dot_graph_with_image(finding, "violation", base_path)
