@@ -462,10 +462,14 @@ def __format_float_value(finding, float_key):
 
 def __replace_dot_graph_with_image(finding, key, base_path):
     image_name = "f{}-{}.png".format(finding["id"], key)
-    __create_image(finding[key], join(base_path, image_name))
+    __create_image(finding[key], base_path, image_name)
     finding[key] = """<img src="./{}" />""".format(image_name)
 
 
-def __create_image(dot_graph, file):
-    makedirs(dirname(file), exist_ok=True)
-    Shell.exec("""echo "{}" | dot -Tpng -o"{}" """.format(dot_graph.replace("\\", "\\\\").replace("\"", "\\\""), file))
+def __create_image(dot_graph, working_directory, image_name):
+    makedirs(working_directory, exist_ok=True)
+    image_path = join(working_directory, image_name)
+    dot_path = image_path + ".dot"
+    safe_write(dot_graph, dot_path, append=False)
+    Shell.exec("dot -Tpng -o""{}"" ""{}""".format(image_path, dot_path))
+    remove(dot_path)
