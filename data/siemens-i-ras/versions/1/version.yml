@@ -1,5 +1,5 @@
 build:
   src: src/
 misuses:
-- 'aes-unsafe-default'
-- 'constant-key'
+- '1'
+- '2'
