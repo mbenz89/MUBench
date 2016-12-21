@@ -1,17 +1,22 @@
 crypto:
-- adempiere.1
-- adempiere.2
-- alibaba-druid.1
-- alibaba-druid.2
-- android-rcs-rcsjta.1
-- battleforge.1
-- battleforge.2
-- battleforge.3
-- battleforge.4
-- itext.1
-- jmrtd.2
-- pawotag.1
-- tab-apps.1
+- alfresco-android-app.1
+- chensun.1
+- chensun.2
+- corona-old.1
+- corona-old.2
+- corona-old.3
+- dalvik.1
+- dalvik.2
+- dalvik.3
+- drftpd3-extended.1
+- drftpd3-extended.2
+- ekool.1
+- freerapid-plugins.1
+- infosec-3.1
+- jclouds.1
+- progin5.1
+- siemens-i-ras.1
+- siemens-i-ras.2
 icse16ex1:
 - aclang.587
 - acmath.998
